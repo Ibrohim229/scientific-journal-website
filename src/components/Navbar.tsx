@@ -1,19 +1,7 @@
 import React from "react";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { navLinks } from "@/lib/data";
 import { Button } from "./ui/button";
-import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -22,19 +10,24 @@ const Navbar = () => {
         <h1 className="uppercase text-white text-xl font-bold">
           SCIENTIFIC AND PRACTICAL JOURNAL ANNALS OF CLINICAL DISCIPLINES
         </h1>
-        <NavigationMenu>
-          <NavigationMenuList>
-            {navLinks.map((navLink) => (
-              <NavigationMenuItem key={navLink.href}>
-                <Link href={navLink.href} passHref legacyBehavior>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    {navLink.label}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+
+        <ul className="flex justify-center items-center">
+          {navLinks.map((navLink) => (
+            <Link
+              href={navLink.href}
+              passHref
+              legacyBehavior
+              key={navLink.href}
+            >
+              <li
+                className="text-center text-white 
+              hover:bg-slate-50 hover:bg-opacity-10 py-4 px-3 cursor-pointer"
+              >
+                {navLink.label}
+              </li>
+            </Link>
+          ))}
+        </ul>
       </div>
 
       <div className="flex flex-col gap-5">
