@@ -21,7 +21,7 @@ const Current = () => {
       <div className="flex flex-col gap-4 mt-20 pt-4">
         <h3 className=" text-black text-lg">Statements</h3>
 
-        <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {statements.map((statement, index) => (
             <div key={index} className="flex flex-col gap-1">
               <h1 className="font-bold  text-[#1E6292]">{statement.title}</h1>
